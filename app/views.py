@@ -7,6 +7,8 @@ def convert_name(firstname,lastname,gender):
         return "Mr. " + firstname.capitalize() + " " + lastname.capitalize()
     elif gender.lower() == "f":
         return "Ms. " + firstname.capitalize() + " " + lastname.capitalize()
+    else:
+        return "Mx. " + firstname.capitalize() + " " + lastname.capitalize()
 
 def math_computation(num1,num2,operator):
     if operator.lower() == "subtract":
@@ -16,7 +18,7 @@ def math_computation(num1,num2,operator):
     elif operator.lower() == "multiply":
         return int(num1)*int(num2)
     elif operator.lower() == "divide":
-        return int(num1)/int(num2)
+        return float(num1)/float(num2)
 
 @app.route('/')
 def index():
