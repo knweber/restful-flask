@@ -9,6 +9,7 @@ Built for Pinterest's technical challenge
 ### Installation instructions
   1. Clone repo down to local computer: ```git clone https://github.com/knweber/restful-flask.git```
   2. Navigate into repo: ```cd restful-flask```
+  3. Install dependencies: ```pip install -r requirements.txt```
   3. Run program: ```$ python run.py```
   4. Program runs on port 5000. To make a request, use one of the following url queries:
       - Greeting: ```localhost:5000/hello?firstname={first name}&lastname={last name}&gender={m/f}```
