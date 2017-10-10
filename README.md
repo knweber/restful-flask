@@ -1,13 +1,16 @@
-## A RESTful web service built in Python that responds to three types of requests:
+## A RESTful Python web service
+Built for Pinterest's technical challenge
+
+### Features:
   - Greetings
   - Mathematical operations
   - Current date
   
-## Installation instructions
+### Installation instructions
 
-## Notes
+### Notes
 
-## Original instructions
+### Original instructions
 
 Build a simple REST-based web server in Scala or Python that supports the following features:
   - Respond to requests of the form “/hello?firstname={first name}&lastname={last name}&gender={m/f}” and respond with “Hello Mr {First Name} {Last Name}” or “Hello Ms {First Name} {Last Name}” depending on the gender
