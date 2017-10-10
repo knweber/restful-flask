@@ -34,11 +34,25 @@ def compute():
 
 @app.route('/hello', methods=['GET','POST'])
 def hello():
-    firstname = request.form['firstname']
-    lastname = request.form['lastname']
-    gender = request.form['gender']
+    if request.form['firstname']:
+        firstname = request.form['firstname']
+    else:
+        firstname = request.args.get('firstname')
+    if request.form['lastname']:
+        lastname = request.form['lastname']
+    else:
+        lastname = request.args.get('lastname')
+    if request.form['gender']:
+        gender = request.form['gender']
+    else:
+        gender = request.args.get('gender')
+    # firstname = request.form['firstname'] and request.args.get('firstname')
+    # lastname = request.form['lastname'] and request.args.get('lastname')
+    # gender = request.form['gender'] and request.args.get('gender')
     name = convert_name(firstname,lastname,gender)
-    return render_template('hello.html',name=name)
+    return render_template('hello.html', name=name)
+# def hello(firstname,lastname,gender):
+
 
 @app.route('/date', methods=['GET','POST'])
 def date():
