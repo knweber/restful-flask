@@ -1,12 +1,14 @@
-
-  <form class="hello-form" action="/hello" method="post">
-    <input type="submit">
-  </form>
+<form action="{{ url_for('hello') }}" method="post">
+  <input name="firstname" type="text" placeholder="First Name"/>
+  <input name="lastname" type="text" placeholder="Last Name"/>
+  <input name="gender" type="text" placeholder="Gender (m/f)"/>
+  <input type="submit"/>
+</form>
 
   <form action="{{ url_for('compute') }}" method="post">
     <input name="num1" type="text" placeholder="First Number"/>
-    <input name="num2" type="text" id="num2" placeholder="Second Number"/>
-    <input name="operator" type="text" id="operator" placeholder="add/subtract/multiply/divide"/>
+    <input name="num2" type="text" placeholder="Second Number"/>
+    <input name="operator" type="text" placeholder="add/subtract/multiply/divide"/>
     <input type="submit"/>
   </form>
 

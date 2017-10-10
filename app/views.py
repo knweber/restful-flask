@@ -4,9 +4,9 @@ from datetime import datetime
 
 def convert_name(firstname,lastname,gender):
     if gender.lower() == "m":
-        return "Mr. " + firstname + " " + lastname
+        return "Mr. " + firstname.capitalize() + " " + lastname.capitalize()
     elif gender.lower() == "f":
-        return "Ms. " + firstname + " " + lastname
+        return "Ms. " + firstname.capitalize() + " " + lastname.capitalize()
 
 def math_computation(num1,num2,operator):
     if operator.lower() == "subtract":
@@ -30,10 +30,13 @@ def compute():
     answer = math_computation(num1,num2,operator)
     return render_template('compute.html', answer=answer)
 
-@app.route('/hello', methods=['POST'])
-def hello(firstname,lastname,gender):
+@app.route('/hello', methods=['GET','POST'])
+def hello():
+    firstname = request.form['firstname']
+    lastname = request.form['lastname']
+    gender = request.form['gender']
     name = convert_name(firstname,lastname,gender)
-    return (jsonify({'name':name}), 200)
+    return render_template('hello.html',name=name)
 
 @app.route('/date', methods=['POST'])
 def date():
