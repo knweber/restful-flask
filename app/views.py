@@ -1,12 +1,12 @@
-from flask import render_template
+from flask import (Flask, request, render_template)
 from app import app
 from datetime import datetime
 
 def convert_name(firstname,lastname,gender):
     if gender.lower() == "m":
-        return "Mr. " + firstname + " " + lastname
+        return "Mr. " + firstname.capitalize() + " " + lastname.capitalize()
     elif gender.lower() == "f":
-        return "Ms. " + firstname + " " + lastname
+        return "Ms. " + firstname.capitalize() + " " + lastname.capitalize()
 
 def math_computation(num1,num2,operator):
     if operator.lower() == "subtract":
@@ -22,17 +22,23 @@ def math_computation(num1,num2,operator):
 def index():
     return render_template('index.html')
 
-@app.route('/compute', methods=['POST','GET'])
-def compute(num1,num2,operator):
+@app.route('/compute', methods=['GET','POST'])
+def compute():
+    num1 = request.form['num1']
+    num2 = request.form['num2']
+    operator = request.form['operator']
     answer = math_computation(num1,num2,operator)
-    return render_template('compute_index.html',answer=answer)
+    return render_template('compute.html', answer=answer)
 
-@app.route('/hello', methods=['POST','GET'])
-def hello(firstname,lastname,gender):
+@app.route('/hello', methods=['GET','POST'])
+def hello():
+    firstname = request.form['firstname']
+    lastname = request.form['lastname']
+    gender = request.form['gender']
     name = convert_name(firstname,lastname,gender)
-    return render_template('hello_index.html',name=name)
+    return render_template('hello.html',name=name)
 
-@app.route('/date')
+@app.route('/date', methods=['GET','POST'])
 def date():
-    date_obj = {'today': datetime.now().strftime('%Y-%m-%d')}
-    return render_template('date_index.html',date_obj=date_obj)
+    date_value = datetime.now().strftime('%Y-%m-%d')
+    return render_template('date.html', date_value=date_value)
