@@ -38,7 +38,7 @@ def hello():
     name = convert_name(firstname,lastname,gender)
     return render_template('hello.html',name=name)
 
-@app.route('/date', methods=['POST'])
+@app.route('/date', methods=['GET','POST'])
 def date():
-    date_obj = {'today': datetime.now().strftime('%Y-%m-%d')}
-    return (jsonify({'date_obj':date_obj}), 200)
+    date_value = datetime.now().strftime('%Y-%m-%d')
+    return render_template('date.html', date_value=date_value)

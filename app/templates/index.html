@@ -12,6 +12,6 @@
     <input type="submit"/>
   </form>
 
-  <form class="date-form" action="/date" method="post">
-    <input type="submit">
+  <form action="{{ url_for('date') }}" method="post">
+    <input type="submit" value="See today's date!">
   </form>
