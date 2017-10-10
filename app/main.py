@@ -20,10 +20,6 @@ def math_computation(num1,num2,operator):
     elif operator == "divide":
         return float(num1)/float(num2)
 
-@app.route('/')
-def index():
-    return render_template('index.html')
-
 @app.route('/compute', methods=['GET','POST'])
 def compute():
     num1 = request.args.get('num1')
