@@ -1,14 +1,15 @@
-{% extends 'base.html' %}
-{% block content %}
+
   <form class="hello-form" action="/hello" method="post">
     <input type="submit">
   </form>
 
-  <form class="compute-form" action="/compute" method="post">
-    <input type="submit">
+  <form action="{{ url_for('compute') }}" method="post">
+    <input name="num1" type="text" placeholder="First Number"/>
+    <input name="num2" type="text" id="num2" placeholder="Second Number"/>
+    <input name="operator" type="text" id="operator" placeholder="add/subtract/multiply/divide"/>
+    <input type="submit"/>
   </form>
 
   <form class="date-form" action="/date" method="post">
     <input type="submit">
   </form>
-{% endblock %}
