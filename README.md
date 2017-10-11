@@ -15,7 +15,8 @@ Built for Pinterest's technical challenge
       - Greeting: ```localhost:5000/hello?firstname={first name}&lastname={last name}&gender={m/f}```
       - Operation: ```localhost:5000/compute?num1={num1}&num2={num2}&operator={add/subtract/multiply/divide}```
       - Get current date: ```localhost:5000/date```
-  5. To run via the command line, use curl: ```curl -X GET http://localhost:5000/{your_query_here}```
+  5. To run via the command line, use curl: ```$ curl -X GET http://localhost:5000/{your_query_here}```
+  6. Run tests: ```$ python tests.py```
 
 ### Notes
 
