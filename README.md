@@ -18,7 +18,7 @@ Built for Pinterest's technical challenge
 
 ### Notes
 
-I elected not to create an ApiResponse class to store the functions in main.py, as I thought it was unnecessary given the size of my project. I wanted to keep my code as clear and concise as possible, and I figured that adding a class would be overengineering.
+I elected not to create ApiResponses/Computations/Greetings/Dates/etc. classes to store the functions in main.py, as I thought it was unnecessary given the size of my project. I wanted to keep my code as clear and concise as possible, and I figured that adding classes might lean toward over-engineering. If the instructions required queries to be saved in a database, or if there were several more features included, I would definitely implement Resource classes.
 
 ### Original instructions
 
