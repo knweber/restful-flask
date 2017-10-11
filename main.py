@@ -29,7 +29,7 @@ def index():
 
 # make a computation request
 @app.route('/compute')
-def compute():
+def get_compute():
     num1 = request.args.get('num1')
     num2 = request.args.get('num2')
     operator = request.args.get('operator')
@@ -39,7 +39,7 @@ def compute():
 
 # make a greeting request
 @app.route('/hello')
-def hello():
+def get_hello():
     firstname = request.args.get('firstname')
     lastname = request.args.get('lastname')
     gender = request.args.get('gender')
@@ -49,7 +49,7 @@ def hello():
 
 # make a request for the current date
 @app.route('/date')
-def date():
+def get_date():
     # returns current date in the format YYYY-MM-DD
     date_value = datetime.now().strftime('%Y-%m-%d')
     return jsonify(date_value)
