@@ -1,5 +1,5 @@
 ## A RESTful Python web service built with Flask
-Built for Pinterest's technical challenge
+Built for a technical challenge
 
 ### Features:
   - Greetings
