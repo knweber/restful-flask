@@ -25,7 +25,7 @@ def math_computation(num1,num2,operator):
 
 @app.route('/')
 def index():
-    return jsonify("Kristianna Weber -- Pinterest Tech Challenge (Instructions located at https://github.com/knweber/restful-flask)")
+    return jsonify("Kristianna Weber -- Tech Challenge (Instructions located at https://github.com/knweber/restful-flask)")
 
 # make a computation request
 @app.route('/compute')
